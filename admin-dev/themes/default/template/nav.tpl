@@ -2,11 +2,9 @@
 	<nav id="{if $employee->bo_menu}nav-sidebar{else}nav-topbar{/if}" role="navigation">
 	<ul class="menu">
 		{foreach $tabs as $level_1}
-
 			{if $level_1.active}
 
 				{* Dashboard exception *}
-
 				{if $level_1.class_name == 'AdminDashboard'}
 					<li class="maintab {if $level_1.current}active{/if}" id="tab-{$level_1.class_name}" data-submenu="{$level_1.id_tab}">
 						<a href="{if $level_1.sub_tabs|@count && isset($level_1.sub_tabs[0].href)}{$level_1.sub_tabs[0].href|escape:'html':'UTF-8'}{else}{$level_1.href|escape:'html':'UTF-8'}{/if}" class="title" >
